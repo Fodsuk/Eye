@@ -73,8 +73,10 @@
   <ItemGroup>
     <Content Include="Content\Images\pattern1left.png" />
     <Content Include="Content\Images\pattern1right.png" />
-    <Content Include="Content\Images\pattern2left.png" />
-    <Content Include="Content\Images\pattern2right.png" />
+    <Content Include="Content\Images\pattern10left.png" />
+    <Content Include="Content\Images\pattern10right.png" />
+    <Content Include="Content\Images\pattern9left.png" />
+    <Content Include="Content\Images\pattern9right.png" />
     <Content Include="Content\Images\pattern3left.png" />
     <Content Include="Content\Images\pattern3right.png" />
     <Content Include="Content\Images\pattern4left.png" />
@@ -87,6 +89,8 @@
     <Content Include="Content\Images\pattern7right.png" />
     <Content Include="Content\Images\pattern8left.png" />
     <Content Include="Content\Images\pattern8right.png" />
+    <Content Include="Content\Images\pattern2left.png" />
+    <Content Include="Content\Images\pattern2right.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

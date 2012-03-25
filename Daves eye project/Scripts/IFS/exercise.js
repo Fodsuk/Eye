@@ -10,10 +10,10 @@ $(document).ready(function () {
     $(window).mousewheel(function (event, delta) {
 
         if (delta == 1) {
-            seperateCircles();
+            seperateImages();
         }
         else {
-            closeCircles();
+            closeImages();
         }
 
         event.preventDefault();
@@ -22,18 +22,28 @@ $(document).ready(function () {
 
     $("#imageOption").change(function (i) {
         var value = $(this).val();
-        loadImages(value);
+        loadImages(images[value]);
         Reset();
     });
 });
 
-function loadImages(imageReference) {
+function loadImages(imageObj) {
     var imagesFolder = "/content/images/";
-    $("#ImageLeft").attr("src", imagesFolder + images[imageReference].left);
-    $("#ImageRight").attr("src", imagesFolder + images[imageReference].right); 
+
+    $("#ImageLeft,#ImageRight").css({
+        width: imageObj.width,
+        height: imageObj.height
+    });
+
+
+    $("#ImageLeft").attr("src", imagesFolder + imageObj.left);
+    $("#ImageRight").attr("src", imagesFolder + imageObj.right);
+    
+    
+   
 }
 
-function seperateCircles() {
+function seperateImages() {
        
     var leftP = getLeftCircleLeft();
 
@@ -49,7 +59,7 @@ function seperateCircles() {
     }
 }
 
-function closeCircles() {
+function closeImages() {
 
     var leftP = getLeftCircleLeft();
     var rightP = getRightCircleLeft();
