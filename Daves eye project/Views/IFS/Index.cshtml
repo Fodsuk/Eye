@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "IFS Exercise";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="/Scripts/IFS/config.js" language="javascript"></script>
+<script type="text/javascript" src="/Scripts/IFS/exercise.js" language="javascript"></script>
+
+<style type="text/css">
+
+    #imageOption {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        width: 120px;
+    }
+</style>
+
+<select name="imageOption" id="imageOption">
+    <option value="pattern1">Pattern 1</option>
+    <option value="pattern2">Pattern 2</option>
+    <option value="pattern3">Pattern 3</option>
+    <option value="pattern4">Pattern 4</option>
+    <option value="pattern5">Pattern 5</option>
+    <option value="pattern6">Pattern 6</option>
+    <option value="pattern7">Pattern 7</option>
+    <option value="pattern8">Pattern 8</option>
+</select>
+
+<img src="/Content/Images/pattern1left.png" alt="Image left" id="ImageLeft" style="width: 111px; height: 111px;" />
+<img src="/Content/Images/pattern1right.png" alt="Image right" id="ImageRight" style="width: 111px; height: 111px;" /> 
+
+
+
