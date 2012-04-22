@@ -8,7 +8,12 @@ namespace Daves_eye_project.Controllers
 {
     public class IFSController : Controller
     {
-        public ActionResult Index()
+        public ActionResult ManualControl()
+        {
+            return View();
+        }
+
+        public ActionResult SetPositions()
         {
             return View();
         }

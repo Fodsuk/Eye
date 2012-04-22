@@ -1,33 +1,9 @@
-﻿var leftPosition, rightPosition;
-
-$(document).ready(function () {
-
-    Reset();
-
-    leftPosition = getLeftCircleLeft();
-    rightPosition = getRightCircleLeft();
-    
-    $(window).mousewheel(function (event, delta) {
-
-        if (delta == 1) {
-            seperateImages();
-        }
-        else {
-            closeImages();
-        }
-
-        event.preventDefault();
-    });
-
-
-    $("#imageOption").change(function (i) {
-        var value = $(this).val();
-        loadImages(images[value]);
-        Reset();
-    });
+﻿$(document).ready(function () {
+    reset();
+    configControls();
 });
 
-function loadImages(imageObj) {
+function changeImage(imageObj) {
     var imagesFolder = "/content/images/";
 
     $("#ImageLeft,#ImageRight").css({
@@ -35,19 +11,13 @@ function loadImages(imageObj) {
         height: imageObj.height
     });
 
-
     $("#ImageLeft").attr("src", imagesFolder + imageObj.left);
     $("#ImageRight").attr("src", imagesFolder + imageObj.right);
-    
-    
-   
 }
 
 function seperateImages() {
-       
-    var leftP = getLeftCircleLeft();
 
-    if (leftPosition - leftP < 400) {
+    if (getLeftCircleLeft() > 400) {
 
         $("#ImageLeft").css({
             left: "-=10px"
@@ -86,7 +56,7 @@ function getRightCircleLeft() {
 }
 
 
-function Reset() {
+function reset() {
  
     $("#ImageLeft").position({
         my: "center center",
@@ -101,4 +71,27 @@ function Reset() {
         of: window,
         offset: "130 0"
     });
+}
+
+function configControls() {
+    
+    //mouse scroll
+     $(window).mousewheel(function (event, delta) {
+
+        if (delta == 1) {
+            seperateImages();
+        }
+        else {
+            closeImages();
+        }
+        event.preventDefault();
+    });
+
+    //change image
+    $("#imageOption").change(function (i) {
+        var value = $(this).val();
+        changeImage(images[value]);
+        reset();
+    });
+
 }
